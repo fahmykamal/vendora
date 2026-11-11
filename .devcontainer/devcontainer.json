@@ -1,0 +1,19 @@
+{
+  "name": "Vendora Development",
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "forwardPorts": [
+    3000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Vendora API",
+      "onAutoForward": "notify"
+    }
+  },
+  "dockerComposeFile": "../compose.yaml",
+  "service": "workspace",
+  "workspaceFolder": "/workspaces/vendora",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "npm ci --prefix apps/api"
+}
